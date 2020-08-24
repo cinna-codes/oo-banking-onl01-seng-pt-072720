@@ -10,6 +10,11 @@ class Transfer
 
   def valid?
     @sender.valid? && @receiver.valid?
+    if @status = "pending"
+      return true
+    else
+      return false
+    end
   end
 
   def execute_transaction
