@@ -14,9 +14,9 @@ class Transfer
 
   def execute_transaction
     self.valid? && status == "pending"
-    self.sender.balance -= @transfer_amount
-    self.receiver.balance(@transfer_amount)
-    self.status = "closed"
+    @sender.balance -= @transfer_amount
+    @receiver.balance(@transfer_amount)
+    @status = "closed"
   end
 
   def reverse_transfer
